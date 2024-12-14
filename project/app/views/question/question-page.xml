@@ -1,0 +1,21 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Ask a Question" />
+    
+    <StackLayout class="p-4">
+        <TextView hint="Type your question here..." text="{{ questionText }}" class="p-2 mb-4 border rounded" />
+        
+        <GridLayout columns="*, *" class="mb-4">
+            <Button text="Take Photo" tap="{{ onTakePhoto }}" class="m-1" col="0" />
+            <Button text="Upload Image" tap="{{ onSelectImage }}" class="m-1" col="1" />
+        </GridLayout>
+
+        <Button text="Ask Question" tap="{{ onAskQuestion }}" class="-primary mb-4" />
+
+        <ScrollView>
+            <StackLayout class="p-4 bg-gray-100 rounded">
+                <Label text="Answer:" class="font-bold mb-2" visibility="{{ answer ? 'visible' : 'collapsed' }}" />
+                <Label text="{{ answer }}" textWrap="true" class="text-gray-700" />
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</Page>

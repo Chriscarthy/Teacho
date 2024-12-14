@@ -1,0 +1,20 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Practice Quiz" />
+    
+    <StackLayout class="p-4">
+        <Label text="{{ currentQuestion.question }}" textWrap="true" class="text-lg mb-4" />
+        
+        <ListView items="{{ currentQuestion.options }}" class="mb-4">
+            <ListView.itemTemplate>
+                <StackLayout class="p-2">
+                    <Button text="{{ $value }}" tap="{{ $parent.onAnswerSelected }}" class="answer-button" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <Label text="{{ feedback }}" textWrap="true" class="feedback-text" />
+        
+        <Button text="Next Question" tap="{{ onNextQuestion }}" class="-primary" 
+                visibility="{{ showNextButton ? 'visible' : 'collapsed' }}" />
+    </StackLayout>
+</Page>

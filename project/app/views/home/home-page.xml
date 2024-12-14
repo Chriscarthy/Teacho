@@ -1,0 +1,40 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="AI Learning Assistant" />
+    
+    <GridLayout rows="auto, *">
+        <StackLayout row="0" class="p-4 bg-blue-100">
+            <Label text="{{ welcomeMessage }}" class="text-lg font-bold" />
+            <Label text="{{ learningStatus }}" class="text-sm text-gray-600" />
+        </StackLayout>
+
+        <ScrollView row="1">
+            <StackLayout class="p-4">
+                <GridLayout columns="*, *" rows="*, *" class="gap-4">
+                    <!-- Ask Question Card -->
+                    <StackLayout col="0" row="0" class="p-4 bg-white rounded-lg shadow" tap="{{ onAskQuestion }}">
+                        <Label text="Ask Question" class="font-bold text-center" />
+                        <Label text="Type or upload an image" class="text-center text-gray-500" />
+                    </StackLayout>
+
+                    <!-- Practice Tests Card -->
+                    <StackLayout col="1" row="0" class="p-4 bg-white rounded-lg shadow" tap="{{ onPracticeTests }}">
+                        <Label text="Practice Tests" class="font-bold text-center" />
+                        <Label text="Take a quiz" class="text-center text-gray-500" />
+                    </StackLayout>
+
+                    <!-- Learning Plan Card -->
+                    <StackLayout col="0" row="1" class="p-4 bg-white rounded-lg shadow" tap="{{ onLearningPlan }}">
+                        <Label text="Learning Plan" class="font-bold text-center" />
+                        <Label text="View your progress" class="text-center text-gray-500" />
+                    </StackLayout>
+
+                    <!-- Community Card -->
+                    <StackLayout col="1" row="1" class="p-4 bg-white rounded-lg shadow" tap="{{ onCommunity }}">
+                        <Label text="Community" class="font-bold text-center" />
+                        <Label text="Connect with others" class="text-center text-gray-500" />
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+</Page>
